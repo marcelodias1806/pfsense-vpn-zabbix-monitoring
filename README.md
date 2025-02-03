@@ -57,13 +57,13 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    **Descoberta dos túneis IPsec**
    - **`UserParameter=ipsec.discovery,/usr/local/bin/ipsec_discovery.sh`:**
 
-   ## Status completo do túnel (usado para itens protótipos)
+   **Status completo do túnel (usado para itens protótipos)**
    - **`UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"`:**
 
-   ## Tempo online do túnel
+   **Tempo online do túnel**
    - **`UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"`:**
 
-   ## Reinicie o Zabbix Agent para aplicar as alterações:
+   **Reinicie o Zabbix Agent para aplicar as alterações:**
    - **`service zabbix_agentd restart`:**
 
 ## Configuração no Zabbix Frontend
