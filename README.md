@@ -42,8 +42,8 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    Script auxiliar que, quando chamado com o identificador do túnel, retorna a linha do comando ipsec status correspondente, permitindo extrair o status completo.
    - **`/usr/local/bin/ipsec_status.sh:`:**
 
-- ## Script auxiliar que retorna somente o tempo online do túnel especificado.
-- **`/usr/local/bin/ipsec_onlinetime.sh:`:**
+   Script auxiliar que retorna somente o tempo online do túnel especificado.
+   - **`/usr/local/bin/ipsec_onlinetime.sh:`:**
 
 - ## Configuração do Zabbix Agent
    Copie os scripts para um diretório acessível (por exemplo, /usr/local/bin/) e torne-os executáveis:
