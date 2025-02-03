@@ -78,10 +78,10 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    #### Crie Itens Protótipos para cada túnel:
 
 ## Status do Túnel:
-   #### Name: IPsec - Status do túnel {#TUNNEL}
-   #### Key: ipsec.tunnel.status[{#TUNNEL}]
-   #### Tipo de Informação: Texto
-   #### Tempo Online:
+Name: IPsec - Status do túnel {#TUNNEL}  
+Key: ipsec.tunnel.status[{#TUNNEL}]  
+Tipo de Informação: Texto  
+   Tempo Online:  
    #### Name: IPsec - Tempo Online do túnel {#TUNNEL}
    #### Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
    #### Tipo de Informação: Texto
