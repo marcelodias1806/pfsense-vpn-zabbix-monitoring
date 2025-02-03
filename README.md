@@ -70,26 +70,26 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    ## Crie uma Regra de Descoberta:
    #### Navegue até Configuration → Hosts e selecione o host monitorado.
    #### Em Discovery rules, crie uma nova regra com:
-   Name: Descoberta de Túneis IPsec
-   Type: Zabbix agent (ou Zabbix agent (active))
-   Key: ipsec.discovery
-   Update interval: (ex.: 60 segundos)
-   Keep lost resources period: (ex.: 7 dias)
-   Crie Itens Protótipos para cada túnel:
+   #### Name: Descoberta de Túneis IPsec
+   #### Type: Zabbix agent (ou Zabbix agent (active))
+   #### Key: ipsec.discovery
+   #### Update interval: (ex.: 60 segundos)
+   #### Keep lost resources period: (ex.: 7 dias)
+   #### Crie Itens Protótipos para cada túnel:
 
 ## Status do Túnel:
-### Name: IPsec - Status do túnel {#TUNNEL}
-### Key: ipsec.tunnel.status[{#TUNNEL}]
-### Tipo de Informação: Texto
-### Tempo Online:
-### Name: IPsec - Tempo Online do túnel {#TUNNEL}
-### Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
-### Tipo de Informação: Texto
-### Crie Triggers (opcional):
+   #### Name: IPsec - Status do túnel {#TUNNEL}
+   #### Key: ipsec.tunnel.status[{#TUNNEL}]
+   #### Tipo de Informação: Texto
+   #### Tempo Online:
+   #### Name: IPsec - Tempo Online do túnel {#TUNNEL}
+   #### Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
+   #### Tipo de Informação: Texto
+   #### Crie Triggers (opcional):
 
 ### Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
 
-- **` {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0`:**
+   - **` {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0`:**
 
 
 #### Contribuições
