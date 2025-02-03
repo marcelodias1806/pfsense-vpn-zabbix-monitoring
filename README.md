@@ -1,4 +1,4 @@
-# Monitoramento de Túneis IPsec com Zabbix e pfSense/FreeBSD
+# Monitoramento de Túneis IPsec no pfSense/FreeBSD com Zabbix  
 
 Este repositório contém um conjunto de scripts e configurações para monitorar túneis IPsec em ambientes pfSense/FreeBSD utilizando o Zabbix. A solução utiliza **UserParameters** e **Low-Level Discovery (LLD)** do Zabbix para coletar informações individualizadas de cada túnel, permitindo a criação de itens, gráficos e triggers específicos para cada conexão.
 
