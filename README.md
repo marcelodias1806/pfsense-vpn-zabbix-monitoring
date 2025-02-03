@@ -69,37 +69,35 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 ### Crie uma Regra de Descoberta:
 
 ### Navegue até Configuration → Hosts e selecione o host monitorado.
-Em Discovery rules, crie uma nova regra com:
-Name: Descoberta de Túneis IPsec
-Type: Zabbix agent (ou Zabbix agent (active))
-Key: ipsec.discovery
-Update interval: (ex.: 60 segundos)
-Keep lost resources period: (ex.: 7 dias)
-Crie Itens Protótipos para cada túnel:
+### Em Discovery rules, crie uma nova regra com:
+### Name: Descoberta de Túneis IPsec
+### Type: Zabbix agent (ou Zabbix agent (active))
+### Key: ipsec.discovery
+### Update interval: (ex.: 60 segundos)
+### Keep lost resources period: (ex.: 7 dias)
+### Crie Itens Protótipos para cada túnel:
 
-Status do Túnel:
-Name: IPsec - Status do túnel {#TUNNEL}
-Key: ipsec.tunnel.status[{#TUNNEL}]
-Tipo de Informação: Texto
-Tempo Online:
-Name: IPsec - Tempo Online do túnel {#TUNNEL}
-Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
-Tipo de Informação: Texto
-Crie Triggers (opcional):
+## Status do Túnel:
+### Name: IPsec - Status do túnel {#TUNNEL}
+### Key: ipsec.tunnel.status[{#TUNNEL}]
+### Tipo de Informação: Texto
+### Tempo Online:
+### Name: IPsec - Tempo Online do túnel {#TUNNEL}
+### Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
+### Tipo de Informação: Texto
+### Crie Triggers (opcional):
 
-Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
+## Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
 
-{Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0
+### {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0
 
 
-Contribuições
-Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
+## Contribuições
+## Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
-Autor
-Marcelo Dias
+### Autor:Marcelo Dias
+### Instagram: @binbash.sh
+### LinkedIn: https://www.linkedin.com/in/mdiasx/
 
-Instagram: @binbash.sh
-LinkedIn: https://www.linkedin.com/in/mdiasx/
-Licença
-Este projeto é licenciado sob a MIT License.
+#### Licença:Este projeto é licenciado sob a MIT License.
 
