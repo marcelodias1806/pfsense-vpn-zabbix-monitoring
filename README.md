@@ -68,8 +68,8 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 
 ## Configuração no Zabbix Frontend
    ## Crie uma Regra de Descoberta:
-   Navegue até Configuration → Hosts e selecione o host monitorado.
-   Em Discovery rules, crie uma nova regra com:
+   #### Navegue até Configuration → Hosts e selecione o host monitorado.
+   #### Em Discovery rules, crie uma nova regra com:
    Name: Descoberta de Túneis IPsec
    Type: Zabbix agent (ou Zabbix agent (active))
    Key: ipsec.discovery
