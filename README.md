@@ -59,16 +59,16 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 ## Status completo do túnel (usado para itens protótipos)
 - **`UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"`:**
 
-# Tempo online do túnel
+## Tempo online do túnel
 - **`UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"`:**
 
-# Reinicie o Zabbix Agent para aplicar as alterações:
+## Reinicie o Zabbix Agent para aplicar as alterações:
 - **`service zabbix_agentd restart`:**
 
-Configuração no Zabbix Frontend
-Crie uma Regra de Descoberta:
+## Configuração no Zabbix Frontend
+### Crie uma Regra de Descoberta:
 
-Navegue até Configuration → Hosts e selecione o host monitorado.
+### Navegue até Configuration → Hosts e selecione o host monitorado.
 Em Discovery rules, crie uma nova regra com:
 Name: Descoberta de Túneis IPsec
 Type: Zabbix agent (ou Zabbix agent (active))
