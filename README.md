@@ -1,6 +1,3 @@
-Segue abaixo o conteúdo atualizado para o seu arquivo `README.md`, incluindo as informações de autor:
-
-```markdown
 # Monitoramento de Túneis IPsec com Zabbix e pfSense/FreeBSD
 
 Este repositório contém um conjunto de scripts e configurações para monitorar túneis IPsec em ambientes pfSense/FreeBSD utilizando o Zabbix. A solução utiliza **UserParameters** e **Low-Level Discovery (LLD)** do Zabbix para coletar informações individualizadas de cada túnel, permitindo a criação de itens, gráficos e triggers específicos para cada conexão.
@@ -40,83 +37,69 @@ Este repositório contém um conjunto de scripts e configurações para monitora
       { "{#TUNNEL}": "con4", "{#STATUS}": "Online", "{#ONLINE_TIME}": "6 hours ago" }
     ]
   }
-  ```
 
-- **`/usr/local/bin/ipsec_status.sh`:**  
-  Script auxiliar que, quando chamado com o identificador do túnel, retorna a linha do comando `ipsec status` correspondente, permitindo extrair o status completo.
+/usr/local/bin/ipsec_status.sh:
+# Script auxiliar que, quando chamado com o identificador do túnel, retorna a linha do comando ipsec status correspondente, permitindo extrair o status completo.
 
-- **`/usr/local/bin/ipsec_onlinetime.sh`:**  
-  Script auxiliar que retorna somente o tempo online do túnel especificado.
+/usr/local/bin/ipsec_onlinetime.sh:
+# Script auxiliar que retorna somente o tempo online do túnel especificado.
 
-## Configuração do Zabbix Agent
+# Configuração do Zabbix Agent
+# Copie os scripts para um diretório acessível (por exemplo, /usr/local/bin/) e torne-os executáveis:
 
-1. **Copie os scripts para um diretório acessível** (por exemplo, `/usr/local/bin/`) e torne-os executáveis:
-   ```sh
-   chmod +x /usr/local/bin/ipsec_discovery.sh
-   chmod +x /usr/local/bin/ipsec_status.sh
-   chmod +x /usr/local/bin/ipsec_onlinetime.sh
-   ```
+chmod +x /usr/local/bin/ipsec_discovery.sh
+chmod +x /usr/local/bin/ipsec_status.sh
+chmod +x /usr/local/bin/ipsec_onlinetime.sh
 
-2. **Edite o arquivo de configuração do Zabbix Agent** (ex.: `/etc/zabbix/zabbix_agentd.conf`) e adicione os seguintes UserParameters:
-   ```conf
-   # Descoberta dos túneis IPsec
-   UserParameter=ipsec.discovery,/usr/local/bin/ipsec_discovery.sh
+# Edite o arquivo de configuração do Zabbix Agent (ex.: /etc/zabbix/zabbix_agentd.conf) e adicione os seguintes UserParameters:
 
-   # Status completo do túnel (usado para itens protótipos)
-   UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"
+# Descoberta dos túneis IPsec
+UserParameter=ipsec.discovery,/usr/local/bin/ipsec_discovery.sh
 
-   # Tempo online do túnel
-   UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"
-   ```
+# Status completo do túnel (usado para itens protótipos)
+UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"
 
-3. **Reinicie o Zabbix Agent** para aplicar as alterações:
-   ```sh
-   service zabbix_agentd restart
-   ```
-   ou
-   ```sh
-   /etc/init.d/zabbix_agentd restart
-   ```
+# Tempo online do túnel
+UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"
 
-## Configuração no Zabbix Frontend
+# Reinicie o Zabbix Agent para aplicar as alterações:
+service zabbix_agentd restart
 
-1. **Crie uma Regra de Descoberta:**
-   - Navegue até **Configuration → Hosts** e selecione o host monitorado.
-   - Em **Discovery rules**, crie uma nova regra com:
-     - **Name:** Descoberta de Túneis IPsec
-     - **Type:** Zabbix agent (ou Zabbix agent (active))
-     - **Key:** `ipsec.discovery`
-     - **Update interval:** (ex.: 60 segundos)
-     - **Keep lost resources period:** (ex.: 7 dias)
+Configuração no Zabbix Frontend
+Crie uma Regra de Descoberta:
 
-2. **Crie Itens Protótipos para cada túnel:**
-   - **Status do Túnel:**
-     - **Name:** IPsec - Status do túnel {#TUNNEL}
-     - **Key:** `ipsec.tunnel.status[{#TUNNEL}]`
-     - **Tipo de Informação:** Texto
-   - **Tempo Online:**
-     - **Name:** IPsec - Tempo Online do túnel {#TUNNEL}
-     - **Key:** `ipsec.tunnel.onlinetime[{#TUNNEL}]`
-     - **Tipo de Informação:** Texto
+Navegue até Configuration → Hosts e selecione o host monitorado.
+Em Discovery rules, crie uma nova regra com:
+Name: Descoberta de Túneis IPsec
+Type: Zabbix agent (ou Zabbix agent (active))
+Key: ipsec.discovery
+Update interval: (ex.: 60 segundos)
+Keep lost resources period: (ex.: 7 dias)
+Crie Itens Protótipos para cada túnel:
 
-3. **Crie Triggers (opcional):**
-   - Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
-     ```plaintext
-     {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0
-     ```
+Status do Túnel:
+Name: IPsec - Status do túnel {#TUNNEL}
+Key: ipsec.tunnel.status[{#TUNNEL}]
+Tipo de Informação: Texto
+Tempo Online:
+Name: IPsec - Tempo Online do túnel {#TUNNEL}
+Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
+Tipo de Informação: Texto
+Crie Triggers (opcional):
 
-## Contribuições
+Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
 
+{Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0
+
+
+Contribuições
 Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
-## Autor
+Autor
+Marcelo Dias
 
-**Marcelo Dias**  
-- Instagram: [@binbash.sh](https://www.instagram.com/binbash.sh)  
-- LinkedIn: [https://www.linkedin.com/in/mdiasx/](https://www.linkedin.com/in/mdiasx/)
+Instagram: @binbash.sh
+LinkedIn: https://www.linkedin.com/in/mdiasx/
+Licença
+Este projeto é licenciado sob a MIT License.
 
-## Licença
-
-Este projeto é licenciado sob a [MIT License](LICENSE).
-
-Este arquivo README descreve o propósito dos scripts, como configurá-los e integrá-los ao Zabbix, e inclui suas informações de autor. Sinta-se à vontade para ajustar ou expandir conforme necessário para o seu projeto.
