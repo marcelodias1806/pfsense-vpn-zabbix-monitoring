@@ -95,8 +95,8 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
 #### Autor: Marcelo Dias
-   ##### Instagram: @binbash.sh 
-   ##### LinkedIn: https://www.linkedin.com/in/mdiasx/ 
+Instagram: @binbash.sh 
+LinkedIn: https://www.linkedin.com/in/mdiasx/ 
 
 ##### Licença: Este projeto é licenciado sob a MIT License. 
 
