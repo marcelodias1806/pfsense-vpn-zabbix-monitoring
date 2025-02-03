@@ -85,9 +85,9 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    #### Name: IPsec - Tempo Online do túnel {#TUNNEL}
    #### Key: ipsec.tunnel.onlinetime[{#TUNNEL}]
    #### Tipo de Informação: Texto
-   #### Crie Triggers (opcional):
-
-### Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
+   #### Crie Triggers (opcional): \
+   
+   ### Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
 
    - **` {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0`:**
 
@@ -95,7 +95,7 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 #### Contribuições
 #### Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
-- ### Autor: Marcelo Dias
+#### Autor: Marcelo Dias
    ##### Instagram: @binbash.sh 
    ##### LinkedIn: https://www.linkedin.com/in/mdiasx/ 
 
