@@ -51,19 +51,19 @@ Este repositório contém um conjunto de scripts e configurações para monitora
 - **`chmod +x /usr/local/bin/ipsec_status.sh`:**
 - **`chmod +x /usr/local/bin/ipsec_onlinetime.sh`:**
 
-- ## Edite o arquivo de configuração do Zabbix Agent (ex.: /etc/zabbix/zabbix_agentd.conf) e adicione os seguintes UserParameters:
+## Edite o arquivo de configuração do Zabbix Agent (ex.: /etc/zabbix/zabbix_agentd.conf) e adicione os seguintes UserParameters:
 
-## Descoberta dos túneis IPsec
+- ## Descoberta dos túneis IPsec
 - **`UserParameter=ipsec.discovery,/usr/local/bin/ipsec_discovery.sh`:**
 
-# Status completo do túnel (usado para itens protótipos)
-UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"
+## Status completo do túnel (usado para itens protótipos)
+- **`UserParameter=ipsec.tunnel.status[*],/usr/local/bin/ipsec_status.sh "$1"`:**
 
 # Tempo online do túnel
-UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"
+- **`UserParameter=ipsec.tunnel.onlinetime[*],/usr/local/bin/ipsec_onlinetime.sh "$1"`:**
 
 # Reinicie o Zabbix Agent para aplicar as alterações:
-service zabbix_agentd restart
+- **`service zabbix_agentd restart`:**
 
 Configuração no Zabbix Frontend
 Crie uma Regra de Descoberta:
