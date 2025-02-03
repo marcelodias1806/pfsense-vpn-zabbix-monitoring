@@ -94,8 +94,8 @@ Crie Triggers (opcional):
 Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
 #### Autor: Marcelo Dias  
-Instagram: @binbash.sh  
-LinkedIn: https://www.linkedin.com/in/mdiasx/  
+Instagram: [@binbash.sh](https://instagram.com/binbash.sh)  
+LinkedIn: [https://www.linkedin.com/in/mdiasx](https://www.linkedin.com/in/mdiasx)  
 
 ##### Licença: Este projeto é licenciado sob a MIT License. 
 
