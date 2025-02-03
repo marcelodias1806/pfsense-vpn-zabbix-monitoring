@@ -87,13 +87,12 @@ Este repositório contém um conjunto de scripts e configurações para monitora
    #### Tipo de Informação: Texto
    #### Crie Triggers (opcional): \
    
-   ### Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
-
+   
+#### Por exemplo, crie um trigger para alertar se o status do túnel não contiver "Online":
    - **` {Nome_do_Host:ipsec.tunnel.status[{#TUNNEL}].str(Online)}=0`:**
 
-
 #### Contribuições
-#### Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
+     Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar os scripts ou a documentação. Qualquer sugestão é bem-vinda!
 
 #### Autor: Marcelo Dias
    ##### Instagram: @binbash.sh 
